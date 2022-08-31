@@ -10,8 +10,10 @@
 
    .__slider-container {
       width: 95%;
-      margin: 1.5rem auto;
+      height: 460px;
+      margin: 1.5rem auto 0;
       overflow: hidden;
+      position: relative;
 
       .__slider-items {
          display: flex;
@@ -45,6 +47,34 @@
                   font-weight: bolder;
                }
             }
+         }
+      }
+
+      .__prev-next {
+         display: flex;
+         gap: 1.25rem;
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         bottom: 0;
+
+         .__previous,
+         .__next {
+            border: 1px solid #135fc2;
+            width: 4.0625rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.8s ease;
+
+            &:hover {
+               background-color: #e8f1fe;
+            }
+         }
+
+         .__previous {
+            transform: rotate(180deg);
          }
       }
    }
