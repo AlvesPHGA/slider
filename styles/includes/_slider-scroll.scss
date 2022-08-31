@@ -12,13 +12,14 @@
       width: 95%;
       height: 460px;
       margin: 1.5rem auto 0;
-      overflow: hidden;
       position: relative;
 
       .__slider-items {
+         overflow-x: hidden;
          display: flex;
          flex-flow: row nowrap;
          gap: 20px;
+         scroll-snap-type: x mandatory;
 
          .__card {
             width: 20rem;
@@ -26,6 +27,7 @@
             border: 1px solid #135fc2;
             border-radius: 5px;
             flex-shrink: 0;
+            scroll-snap-align: start;
 
             .__image {
                width: 100%;
@@ -61,6 +63,7 @@
          .__previous,
          .__next {
             border: 1px solid #135fc2;
+            background: transparent;
             width: 4.0625rem;
             border-radius: 50%;
             display: flex;
@@ -70,6 +73,10 @@
 
             &:hover {
                background-color: #e8f1fe;
+            }
+
+            img {
+               border-radius: 50%;
             }
          }
 
