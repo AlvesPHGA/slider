@@ -8,31 +8,45 @@ img {
   max-width: 100%;
 }
 
-.__slider-container .__slider-items {
+.__slider-scroll {
+  padding: 3rem 0;
+}
+.__slider-scroll h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+}
+.__slider-scroll .__slider-container {
+  width: 95%;
+  margin: 1.5rem auto;
+  overflow: hidden;
+}
+.__slider-scroll .__slider-container .__slider-items {
   display: flex;
   flex-flow: row nowrap;
   gap: 20px;
 }
-.__slider-container .__slider-items .__card {
+.__slider-scroll .__slider-container .__slider-items .__card {
   width: 20rem;
   background: #e8f1fe;
   border: 1px solid #135fc2;
   border-radius: 5px;
   flex-shrink: 0;
 }
-.__slider-container .__slider-items .__card .__image {
+.__slider-scroll .__slider-container .__slider-items .__card .__image {
   width: 100%;
   border-radius: 5px;
 }
-.__slider-container .__slider-items .__card .__image img {
+.__slider-scroll .__slider-container .__slider-items .__card .__image img {
   border-radius: 5px 5px 0 0;
 }
-.__slider-container .__slider-items .__card .__description {
+.__slider-scroll .__slider-container .__slider-items .__card .__description {
   background: transparent;
   padding: 10px 0;
   text-align: center;
 }
-.__slider-container .__slider-items .__card .__description span {
+.__slider-scroll .__slider-container .__slider-items .__card .__description span {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   font-weight: bolder;
