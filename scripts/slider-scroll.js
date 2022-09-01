@@ -7,7 +7,7 @@ export default class SliderScroll {
    }
 
    previousMove() {
-      const child_item = this.slider_content.firstElementChild.clientWidth;
+      let child_item = this.slider_content.firstElementChild.clientWidth;
       this.slider_content.scrollLeft -= child_item;
    }
 

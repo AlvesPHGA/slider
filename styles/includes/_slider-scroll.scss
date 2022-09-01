@@ -20,6 +20,7 @@
          flex-flow: row nowrap;
          gap: 20px;
          scroll-snap-type: x mandatory;
+         scroll-behavior: smooth;
 
          .__card {
             width: 20rem;
@@ -27,7 +28,7 @@
             border: 1px solid #135fc2;
             border-radius: 5px;
             flex-shrink: 0;
-            scroll-snap-align: start;
+            scroll-snap-align: center;
 
             .__image {
                width: 100%;
@@ -35,6 +36,7 @@
 
                img {
                   border-radius: 5px 5px 0 0;
+                  width: 100%;
                }
             }
 
