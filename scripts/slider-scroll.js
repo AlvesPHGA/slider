@@ -3,30 +3,51 @@ export default class SliderScroll {
       this.dt_slider = document.querySelector(dt_slider);
 
       this.slider_content = this.dt_slider.querySelector('.__slider-items');
-      this.buttons = this.dt_slider.querySelectorAll('button');
+
+      this.btn_previous = this.dt_slider.querySelector('.__previous');
+      this.btn_next = this.dt_slider.querySelector('.__next');
+
+      this.btn_previous.classList.add('__desabled');
    }
 
-   previousMove() {
-      let child_item = this.slider_content.firstElementChild.clientWidth;
-      this.slider_content.scrollLeft -= child_item;
+   leftMove() {
+      const child_item = this.slider_content.firstElementChild;
+
+      const res_calc =
+         child_item.getBoundingClientRect().right -
+         child_item.getBoundingClientRect().right * 0.95;
+
+      this.slider_content.scrollLeft -= child_item.clientWidth;
+
+      if (res_calc > 0) this.btn_previous.classList.add('__desabled');
    }
 
-   nextMove() {
-      const child_item = this.slider_content.firstElementChild.clientWidth;
-      this.slider_content.scrollLeft += child_item;
+   rightMove() {
+      const child_item = this.slider_content.lastElementChild;
+      this.slider_content.scrollLeft += child_item.clientWidth;
+
+      if (child_item.getBoundingClientRect().left < this.dt_slider.clientWidth)
+         this.btn_next.classList.add('__desabled');
    }
 
    eventClick() {
-      this.buttons.forEach((el) => {
-         el.addEventListener('click', (t) => {
-            t.target.parentElement.classList.contains('__previous')
-               ? this.previousMove()
-               : this.nextMove();
-         });
+      this.btn_previous.addEventListener('click', () => {
+         this.btn_next.classList.remove('__desabled');
+         this.leftMove();
+      });
+      this.btn_next.addEventListener('click', () => {
+         this.btn_previous.classList.remove('__desabled');
+         this.rightMove();
       });
    }
 
+   eventBind() {
+      this.leftMove = this.leftMove.bind(this);
+      this.rightMove = this.rightMove.bind(this);
+   }
+
    init() {
+      this.eventBind();
       this.eventClick();
       return this;
    }

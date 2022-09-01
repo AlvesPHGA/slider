@@ -22,15 +22,16 @@ img {
   height: 460px;
   margin: 1.5rem auto 0;
   position: relative;
+  overflow: hidden;
 }
 .__slider-scroll .__slider-container .__slider-items {
-  overflow-x: hidden;
   display: flex;
   flex-flow: row nowrap;
   gap: 20px;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 .__slider-scroll .__slider-container .__slider-items .__card {
   width: 20rem;
@@ -84,6 +85,10 @@ img {
 .__slider-scroll .__slider-container .__prev-next .__previous img,
 .__slider-scroll .__slider-container .__prev-next .__next img {
   border-radius: 50%;
+}
+.__slider-scroll .__slider-container .__prev-next .__previous.__desabled,
+.__slider-scroll .__slider-container .__prev-next .__next.__desabled {
+  pointer-events: none;
 }
 .__slider-scroll .__slider-container .__prev-next .__previous {
   transform: rotate(180deg);

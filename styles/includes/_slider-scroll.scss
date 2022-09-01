@@ -13,14 +13,15 @@
       height: 460px;
       margin: 1.5rem auto 0;
       position: relative;
+      overflow: hidden;
 
       .__slider-items {
-         overflow-x: hidden;
          display: flex;
          flex-flow: row nowrap;
          gap: 20px;
          scroll-snap-type: x mandatory;
          scroll-behavior: smooth;
+         overflow: hidden;
 
          .__card {
             width: 20rem;
@@ -79,6 +80,10 @@
 
             img {
                border-radius: 50%;
+            }
+
+            &.__desabled {
+               pointer-events: none;
             }
          }
 
