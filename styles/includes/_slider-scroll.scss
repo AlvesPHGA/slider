@@ -17,6 +17,10 @@
       border: 2px solid #e8f1fe;
       padding-top: 0.2rem;
 
+      @include mobile_s {
+         height: 380px;
+      }
+
       .__slider-items {
          display: flex;
          flex-flow: row nowrap;
@@ -32,6 +36,10 @@
             border-radius: 5px;
             flex-shrink: 0;
             scroll-snap-align: center;
+
+            @include mobile_s {
+               width: 70%;
+            }
 
             .__image {
                width: 100%;

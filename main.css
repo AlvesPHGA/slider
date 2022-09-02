@@ -26,6 +26,11 @@ img {
   border: 2px solid #e8f1fe;
   padding-top: 0.2rem;
 }
+@media (max-width: 320px) {
+  .__slider-scroll .__slider-container {
+    height: 380px;
+  }
+}
 .__slider-scroll .__slider-container .__slider-items {
   display: flex;
   flex-flow: row nowrap;
@@ -42,6 +47,11 @@ img {
   border-radius: 5px;
   flex-shrink: 0;
   scroll-snap-align: center;
+}
+@media (max-width: 320px) {
+  .__slider-scroll .__slider-container .__slider-items .__card {
+    width: 70%;
+  }
 }
 .__slider-scroll .__slider-container .__slider-items .__card .__image {
   width: 100%;
