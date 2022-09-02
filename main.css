@@ -22,7 +22,9 @@ img {
   height: 460px;
   margin: 1.5rem auto 0;
   position: relative;
-  overflow: hidden;
+  overflow: initial;
+  border: 2px solid #e8f1fe;
+  padding-top: 0.2rem;
 }
 .__slider-scroll .__slider-container .__slider-items {
   display: flex;
@@ -31,7 +33,7 @@ img {
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .__slider-scroll .__slider-container .__slider-items .__card {
   width: 20rem;
@@ -65,7 +67,7 @@ img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0;
+  bottom: 0.5rem;
 }
 .__slider-scroll .__slider-container .__prev-next .__previous,
 .__slider-scroll .__slider-container .__prev-next .__next {

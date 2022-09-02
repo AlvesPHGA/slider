@@ -10,6 +10,17 @@ export default class SliderScroll {
       this.btn_previous.classList.add('__desabled');
    }
 
+   eventClick() {
+      this.btn_previous.addEventListener('click', () => {
+         this.btn_next.classList.remove('__desabled');
+         this.leftMove();
+      });
+      this.btn_next.addEventListener('click', () => {
+         this.btn_previous.classList.remove('__desabled');
+         this.rightMove();
+      });
+   }
+
    leftMove() {
       const child_item = this.slider_content.firstElementChild;
 
@@ -28,17 +39,6 @@ export default class SliderScroll {
 
       if (child_item.getBoundingClientRect().left < this.dt_slider.clientWidth)
          this.btn_next.classList.add('__desabled');
-   }
-
-   eventClick() {
-      this.btn_previous.addEventListener('click', () => {
-         this.btn_next.classList.remove('__desabled');
-         this.leftMove();
-      });
-      this.btn_next.addEventListener('click', () => {
-         this.btn_previous.classList.remove('__desabled');
-         this.rightMove();
-      });
    }
 
    eventBind() {

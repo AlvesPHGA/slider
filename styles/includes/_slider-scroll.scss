@@ -13,7 +13,9 @@
       height: 460px;
       margin: 1.5rem auto 0;
       position: relative;
-      overflow: hidden;
+      overflow: initial;
+      border: 2px solid #e8f1fe;
+      padding-top: 0.2rem;
 
       .__slider-items {
          display: flex;
@@ -21,7 +23,7 @@
          gap: 20px;
          scroll-snap-type: x mandatory;
          scroll-behavior: smooth;
-         overflow: hidden;
+         overflow-x: hidden;
 
          .__card {
             width: 20rem;
@@ -61,7 +63,7 @@
          position: absolute;
          left: 50%;
          transform: translateX(-50%);
-         bottom: 0;
+         bottom: 0.5rem;
 
          .__previous,
          .__next {
