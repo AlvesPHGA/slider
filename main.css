@@ -91,6 +91,11 @@ img {
 .__slider-scroll .__slider-container .__prev-next .__previous.__desabled,
 .__slider-scroll .__slider-container .__prev-next .__next.__desabled {
   pointer-events: none;
+  transition: all 2s ease;
+}
+.__slider-scroll .__slider-container .__prev-next .__previous.__desabled img,
+.__slider-scroll .__slider-container .__prev-next .__next.__desabled img {
+  transform: scale(0.8);
 }
 .__slider-scroll .__slider-container .__prev-next .__previous {
   transform: rotate(180deg);
