@@ -22,9 +22,9 @@ img {
   height: 460px;
   margin: 1.5rem auto 0;
   position: relative;
-  overflow: initial;
   border: 2px solid #e8f1fe;
   padding-top: 0.2rem;
+  overflow-x: hidden;
 }
 @media (max-width: 320px) {
   .__slider-scroll .__slider-container {
@@ -39,6 +39,11 @@ img {
       scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+@media (max-width: 320px) {
+  .__slider-scroll .__slider-container .__slider-items {
+    overflow-x: initial;
+  }
 }
 .__slider-scroll .__slider-container .__slider-items .__card {
   width: 20rem;
@@ -78,6 +83,11 @@ img {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0.5rem;
+}
+@media (max-width: 320px) {
+  .__slider-scroll .__slider-container .__prev-next {
+    display: none;
+  }
 }
 .__slider-scroll .__slider-container .__prev-next .__previous,
 .__slider-scroll .__slider-container .__prev-next .__next {

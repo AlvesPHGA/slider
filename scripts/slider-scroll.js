@@ -8,6 +8,13 @@ export default class SliderScroll {
       this.btn_next = this.dt_slider.querySelector('.__next');
 
       this.btn_previous.classList.add('__desabled');
+
+      this.touch_position = {
+         start: 0,
+         final: 0,
+         move: 0,
+         new_position: 0,
+      };
    }
 
    eventClick() {
@@ -41,14 +48,54 @@ export default class SliderScroll {
          this.btn_next.classList.add('__desabled');
    }
 
+   eventTouch() {
+      this.dt_slider.addEventListener('touchstart', (ev) => {
+         this.touch_position.start =
+            ev.changedTouches[0].clientX - this.slider_content.offsetLeft;
+      });
+
+      this.dt_slider.addEventListener('touchmove', (ev) => {
+         const event_touch = ev.changedTouches[0].clientX;
+         this.onMoveTouchSlider(event_touch);
+      });
+
+      this.dt_slider.addEventListener('touchend', (ev) => {
+         this.offMoveTouchSlider(ev);
+      });
+   }
+
+   onMoveTouchSlider(ev) {
+      const touch_cli = this.updatedPosition(ev);
+      this.moveSlider(touch_cli);
+   }
+
+   moveSlider(distX) {
+      this.touch_position.new_position = distX;
+      this.slider_content.style.transform = `translateX(${distX}px)`;
+   }
+
+   updatedPosition(touch_cli) {
+      this.touch_position.move = (this.touch_position.start - touch_cli) * 1.1;
+
+      return this.touch_position.final - this.touch_position.move;
+   }
+
+   offMoveTouchSlider() {
+      this.touch_position.final = this.touch_position.new_position;
+   }
+
    eventBind() {
       this.leftMove = this.leftMove.bind(this);
       this.rightMove = this.rightMove.bind(this);
+
+      this.onMoveTouchSlider = this.onMoveTouchSlider.bind(this);
+      this.offMoveTouchSlider = this.offMoveTouchSlider.bind(this);
    }
 
    init() {
       this.eventBind();
       this.eventClick();
+      this.eventTouch();
       return this;
    }
 }

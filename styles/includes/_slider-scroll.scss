@@ -13,9 +13,9 @@
       height: 460px;
       margin: 1.5rem auto 0;
       position: relative;
-      overflow: initial;
       border: 2px solid #e8f1fe;
       padding-top: 0.2rem;
+      overflow-x: hidden;
 
       @include mobile_s {
          height: 380px;
@@ -28,6 +28,10 @@
          scroll-snap-type: x mandatory;
          scroll-behavior: smooth;
          overflow-x: hidden;
+
+         @include mobile_s {
+            overflow-x: initial;
+         }
 
          .__card {
             width: 20rem;
@@ -72,6 +76,10 @@
          left: 50%;
          transform: translateX(-50%);
          bottom: 0.5rem;
+
+         @include mobile_s {
+            display: none;
+         }
 
          .__previous,
          .__next {
