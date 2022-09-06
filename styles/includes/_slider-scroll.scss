@@ -24,6 +24,12 @@
          border: none;
       }
 
+      @include mobile_m {
+         height: auto;
+         width: 100%;
+         border: none;
+      }
+
       .__slider-items {
          display: flex;
          flex-flow: row nowrap;
@@ -44,6 +50,15 @@
             height: 240px;
          }
 
+         @include mobile_m {
+            overflow-x: initial;
+            gap: 10px;
+            scroll-margin: 10px;
+            scroll-snap-type: none;
+            scroll-behavior: initial;
+            height: 270px;
+         }
+
          .__card {
             width: 20rem;
             background: #e8f1fe;
@@ -53,6 +68,11 @@
             scroll-snap-align: center;
 
             @include mobile_s {
+               width: calc(100vw / 2);
+               scroll-snap-align: initial;
+            }
+
+            @include mobile_m {
                width: calc(100vw / 2);
                scroll-snap-align: initial;
             }
@@ -94,6 +114,10 @@
          bottom: 0.5rem;
 
          @include mobile_s {
+            display: none;
+         }
+
+         @include mobile_m {
             display: none;
          }
 
