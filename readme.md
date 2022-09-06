@@ -1,1 +1,3 @@
 # Slider collection
+
+## Description
