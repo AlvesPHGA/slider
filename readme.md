@@ -9,3 +9,14 @@
 <ol>
    <li>Slider scroll</li>
 </ol>
+
+## Technologys
+
+<ul>
+   <li>HTML</li>
+   <li>CSS</li>
+   <ul>
+      <li>Sass</li>
+   </ul>
+   <li>JavaScript</li>
+</ul>
