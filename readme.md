@@ -1,3 +1,5 @@
+-> Status of project: :construction: Under Development :construction_worker:
+
 # Slider collection
 
 ## Description
