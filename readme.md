@@ -1,4 +1,4 @@
--> Status of project: :construction: Under Development :construction_worker:
+-> _Status of project_: :construction: Under Development :construction_worker:
 
 # Slider collection
 
