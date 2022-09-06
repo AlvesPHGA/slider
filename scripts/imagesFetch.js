@@ -1,8 +1,9 @@
 export default class ImagesFetch {
-   constructor(contents) {
+   constructor(contents, url_site, digimon_lvl) {
       this.contents = document.querySelector(contents);
+      this.url = url_site;
 
-      this.url = `https://digimon-api.vercel.app/api/digimon`;
+      this.digimon_lvl = digimon_lvl;
    }
 
    getImagesInAPI() {
@@ -16,7 +17,7 @@ export default class ImagesFetch {
                   level: item[i].level,
                };
 
-               if (this.info.level === 'Champion')
+               if (this.info.level === this.digimon_lvl)
                   this.contents.innerHTML += this.template();
             }
          });
