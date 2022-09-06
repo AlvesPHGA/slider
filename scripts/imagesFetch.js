@@ -9,7 +9,7 @@ export default class ImagesFetch {
       fetch(this.url)
          .then((res) => res.json())
          .then((item) => {
-            for (let i = 0; i <= 100; i++) {
+            for (let i = 0; i <= 20; i++) {
                this.info = {
                   name: item[i].name,
                   image: item[i].img,

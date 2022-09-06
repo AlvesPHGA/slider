@@ -1,19 +1,17 @@
 export default class SliderScroll {
-   constructor(dt_slider) {
+   constructor(dt_slider, slider_content) {
       this.dt_slider = document.querySelector(dt_slider);
 
-      this.slider_content = this.dt_slider.querySelector('.__slider-items');
+      this.slider_content = this.dt_slider.querySelector(slider_content);
 
       this.btn_previous = this.dt_slider.querySelector('.__previous');
       this.btn_next = this.dt_slider.querySelector('.__next');
 
       this.btn_previous.classList.add('__desabled');
 
-      this.touch_position = {
-         start: 0,
+      this.touch = {
          final: 0,
-         move: 0,
-         new_position: 0,
+         start: 0,
       };
    }
 
@@ -48,54 +46,54 @@ export default class SliderScroll {
          this.btn_next.classList.add('__desabled');
    }
 
-   eventTouch() {
+   // ----
+   touchEvent() {
       this.dt_slider.addEventListener('touchstart', (ev) => {
-         this.touch_position.start =
+         this.touch.start =
             ev.changedTouches[0].clientX - this.slider_content.offsetLeft;
       });
 
       this.dt_slider.addEventListener('touchmove', (ev) => {
-         const event_touch = ev.changedTouches[0].clientX;
-         this.onMoveTouchSlider(event_touch);
-      });
+         this.touch.final = ev.changedTouches[0].clientX;
 
-      this.dt_slider.addEventListener('touchend', (ev) => {
-         this.offMoveTouchSlider(ev);
+         this.touchMove(this.touch.final);
       });
    }
 
-   onMoveTouchSlider(ev) {
-      const touch_cli = this.updatedPosition(ev);
-      this.moveSlider(touch_cli);
+   touchMove(move_position) {
+      this.slider_content.style.left = `${move_position - this.touch.start}px`;
+      this.slider_content.style.translate = 'left .9s ease';
+
+      this.checkBoudary();
    }
 
-   moveSlider(distX) {
-      this.touch_position.new_position = distX;
-      this.slider_content.style.transform = `translateX(${distX}px)`;
-   }
+   checkBoudary() {
+      const slider = this.dt_slider.getBoundingClientRect();
+      const slider_content = this.slider_content.getBoundingClientRect();
 
-   updatedPosition(touch_cli) {
-      this.touch_position.move = (this.touch_position.start - touch_cli) * 1.1;
+      const sytle_left = parseInt(this.slider_content.style.left);
 
-      return this.touch_position.final - this.touch_position.move;
-   }
+      if (sytle_left > 0) this.slider_content.style.left = '0px';
 
-   offMoveTouchSlider() {
-      this.touch_position.final = this.touch_position.new_position;
+      if (slider_content.right < slider.right)
+         this.slider_content.style.left = `-${
+            slider_content.width - slider.width
+         }px`;
    }
+   // ----
 
    eventBind() {
       this.leftMove = this.leftMove.bind(this);
       this.rightMove = this.rightMove.bind(this);
 
-      this.onMoveTouchSlider = this.onMoveTouchSlider.bind(this);
-      this.offMoveTouchSlider = this.offMoveTouchSlider.bind(this);
+      this.touchMove = this.touchMove.bind(this);
    }
 
    init() {
       this.eventBind();
       this.eventClick();
-      this.eventTouch();
+      this.touchEvent();
+
       return this;
    }
 }
