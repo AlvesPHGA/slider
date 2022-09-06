@@ -10,7 +10,7 @@
    <li>Slider scroll</li>
 </ol>
 
-## Technologys
+## Technologies
 
 <ul>
    <li>HTML</li>
