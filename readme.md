@@ -9,7 +9,8 @@
 ## Project contents
 
 <ol>
-   <li>Slider scroll</li>
+   <li>Slider scroll :heavy_check_mark:</li>
+   <li>Slider Infinite :construction_worker:</li>
 </ol>
 
 ## Technologies
