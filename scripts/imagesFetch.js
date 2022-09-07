@@ -1,8 +1,8 @@
 export default class ImagesFetch {
    constructor(contents, url_site, digimon_lvl) {
       this.contents = document.querySelector(contents);
-      this.url = url_site;
 
+      this.url = url_site;
       this.digimon_lvl = digimon_lvl;
    }
 
