@@ -182,12 +182,10 @@ img {
   margin: 1.5rem auto 0;
   padding: 0.2rem 0;
   position: relative;
-  border: 1px solid red;
 }
 .__slider-infinite .__slider-container .__slider-contents {
   width: 1200px;
   margin: 0 auto;
-  border: 1px solid blue;
   overflow: hidden;
 }
 .__slider-infinite .__slider-container .__slider-contents .__items {
