@@ -7,7 +7,6 @@ export default class SliderInfinite {
       this.next = this.dt_slider.querySelector('.__btn-next');
 
       const last_element = this.slider_contents.lastElementChild;
-
       this.slider_contents.insertAdjacentElement('afterbegin', last_element);
    }
 
@@ -66,24 +65,14 @@ export default class SliderInfinite {
       let last = this.slider_contents.lastElementChild;
 
       this.styleLeft(el);
-
-      setTimeout(() => {
-         this.slider_contents.style.transition = 'none';
-         this.slider_contents.insertAdjacentElement('afterbegin', last);
-         this.slider_contents.style.marginLeft = '-100%';
-      }, 900);
+      this.timeout(el);
    }
 
    nextItem(el) {
       let first = this.slider_contents.firstElementChild;
 
       this.styleLeft(el);
-
-      setTimeout(() => {
-         this.slider_contents.style.transition = 'none';
-         this.slider_contents.insertAdjacentElement('beforeend', first);
-         this.slider_contents.style.marginLeft = '-100%';
-      }, 900);
+      this.timeout(el);
    }
 
    styleLeft(el) {
@@ -95,6 +84,37 @@ export default class SliderInfinite {
       this.slider_contents.style.transition = 'margin-left .7s ease';
    }
 
+   timeout(el) {
+      let direction, element;
+
+      el.target.alt === 'back'
+         ? ((direction = 'afterbegin'),
+           (element = this.slider_contents.lastElementChild))
+         : ((direction = 'beforeend'),
+           (element = this.slider_contents.firstElementChild));
+
+      setTimeout(() => {
+         this.slider_contents.style.transition = 'none';
+         this.slider_contents.insertAdjacentElement(direction, element);
+         this.slider_contents.style.marginLeft = '-100%';
+      }, 900);
+   }
+
+   automaticSlider() {
+      setInterval(() => {
+         let first = this.slider_contents.firstElementChild;
+
+         this.slider_contents.style.marginLeft = '-200%';
+         this.slider_contents.style.transition = 'margin-left .7s ease';
+
+         setTimeout(() => {
+            this.slider_contents.style.transition = 'none';
+            this.slider_contents.insertAdjacentElement('beforeend', first);
+            this.slider_contents.style.marginLeft = '-100%';
+         }, 900);
+      }, 4000);
+   }
+
    eventBind() {
       this.prevItem = this.prevItem.bind(this);
       this.nextItem = this.nextItem.bind(this);
@@ -104,6 +124,7 @@ export default class SliderInfinite {
       this.eventBind();
       this.getImageInAPI();
       this.clickArrows();
+      this.automaticSlider();
       return this;
    }
 }
