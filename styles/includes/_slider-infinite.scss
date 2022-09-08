@@ -9,76 +9,86 @@
    }
 
    .__slider-container {
-      width: 100%;
+      width: 90vw;
       margin: 1.5rem auto 0;
       padding: 0.2rem 0;
-      overflow: hidden;
       position: relative;
 
+      border: 1px solid red;
+
       .__slider-contents {
-         display: flex;
-         flex-flow: row nowrap;
          width: 1200px;
          margin: 0 auto;
+         border: 1px solid blue;
          overflow: hidden;
 
-         .__item {
+         .__items {
             width: 100%;
-            height: 388px;
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            flex-flow: row nowrap;
             flex-shrink: 0;
 
-            .__card {
-               width: 385px;
-               height: 100%;
-               position: relative;
-               background: #e8f1fe;
-               border: 1px solid #135fc2;
-               border-radius: 5px;
+            margin-left: -100%;
 
-               background: rgba($color: red, $alpha: 0.3);
+            .__item {
+               width: 100%;
+               height: 388px;
+               display: flex;
+               justify-content: center;
+               gap: 20px;
+               flex-shrink: 0;
+               margin: 0 auto;
 
-               .__image {
-                  width: 100%;
-                  height: 80%;
-                  flex-shrink: 0;
-
-                  img {
-                     width: 100%;
-                     height: 100%;
-                     border-radius: 5px 5px 0 0;
-                  }
-               }
-
-               .__description {
+               .__card {
+                  width: 385px;
+                  height: 100%;
+                  position: relative;
                   background: #e8f1fe;
-                  height: 20%;
-                  display: flex;
-                  border-radius: 0 0 5px 5px;
-
-                  .__legend {
-                     font-family: Arial, Helvetica, sans-serif;
-                     font-size: 1.5rem;
-                     font-weight: bolder;
-                     margin: auto;
-                  }
-               }
-
-               .__level {
-                  width: fit-content;
-                  font-size: 1.1rem;
-                  font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
-                     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                  background: #135fc2;
-                  color: #fff;
                   border: 1px solid #135fc2;
                   border-radius: 5px;
-                  padding: 5px 10px;
-                  position: absolute;
-                  right: 0.2rem;
-                  top: 0.2rem;
+
+                  background: rgba($color: red, $alpha: 0.3);
+
+                  .__image {
+                     width: 100%;
+                     height: 80%;
+                     flex-shrink: 0;
+
+                     img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5px 5px 0 0;
+                     }
+                  }
+
+                  .__description {
+                     background: #e8f1fe;
+                     height: 20%;
+                     display: flex;
+                     border-radius: 0 0 5px 5px;
+
+                     .__legend {
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 1.5rem;
+                        font-weight: bolder;
+                        margin: auto;
+                     }
+                  }
+
+                  .__level {
+                     width: fit-content;
+                     font-size: 1.1rem;
+                     font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+                        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                     background: #135fc2;
+                     color: #fff;
+                     border: 1px solid #135fc2;
+                     border-radius: 5px;
+                     padding: 5px 10px;
+                     position: absolute;
+                     right: 0.2rem;
+                     top: 0.2rem;
+                  }
                }
             }
          }

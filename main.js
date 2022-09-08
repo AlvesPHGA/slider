@@ -19,6 +19,6 @@ slider_scroll.init();
 // Slider Infinite
 const slider_infinite = new SliderInfinite(
    '[data-slider=infinite]',
-   '.__slider-contents',
+   '.__slider-contents .__items',
 );
 slider_infinite.init();
