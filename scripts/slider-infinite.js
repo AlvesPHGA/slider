@@ -28,14 +28,14 @@ export default class SliderInfinite {
                const { name, img, level } = item[b];
 
                if (level === 'Rookie')
-                  html_dom[0].innerHTML += this.template(name, img, level);
+                  html_dom[2].innerHTML += this.template(name, img, level);
             }
 
             for (let c = 13; c < 16; c++) {
                const { name, img, level } = item[c];
 
                if (level === 'Rookie')
-                  html_dom[2].innerHTML += this.template(name, img, level);
+                  html_dom[0].innerHTML += this.template(name, img, level);
             }
          });
    }
@@ -57,11 +57,15 @@ export default class SliderInfinite {
       `;
    }
 
-   prevItem() {
+   clickArrows() {
+      this.previous.addEventListener('click', this.prevItem);
+      this.next.addEventListener('click', this.nextItem);
+   }
+
+   prevItem(el) {
       let last = this.slider_contents.lastElementChild;
 
-      this.slider_contents.style.marginLeft = '0';
-      this.slider_contents.style.transition = 'margin-left .7s ease';
+      this.styleLeft(el);
 
       setTimeout(() => {
          this.slider_contents.style.transition = 'none';
@@ -70,11 +74,10 @@ export default class SliderInfinite {
       }, 900);
    }
 
-   nextItem() {
+   nextItem(el) {
       let first = this.slider_contents.firstElementChild;
 
-      this.slider_contents.style.marginLeft = '-200%';
-      this.slider_contents.style.transition = 'margin-left .7s ease';
+      this.styleLeft(el);
 
       setTimeout(() => {
          this.slider_contents.style.transition = 'none';
@@ -83,9 +86,13 @@ export default class SliderInfinite {
       }, 900);
    }
 
-   clickArrows() {
-      this.previous.addEventListener('click', this.prevItem);
-      this.next.addEventListener('click', this.nextItem);
+   styleLeft(el) {
+      let margin_left;
+
+      el.target.alt === 'back' ? (margin_left = '0') : (margin_left = '-200%');
+
+      this.slider_contents.style.marginLeft = margin_left;
+      this.slider_contents.style.transition = 'margin-left .7s ease';
    }
 
    eventBind() {
