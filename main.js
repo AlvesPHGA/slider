@@ -1,6 +1,7 @@
 import ImagesFetch from './scripts/imagesFetch.js';
 import SliderScroll from './scripts/slider-scroll.js';
 import SliderInfinite from './scripts/slider-infinite.js';
+import SliderShow from './scripts/slider-show.js';
 
 // Slider Scroll
 const imagesFetchToSliderScroll = new ImagesFetch(
@@ -22,3 +23,7 @@ const slider_infinite = new SliderInfinite(
    '.__slider-contents .__items',
 );
 slider_infinite.init();
+
+// Slider
+const slider_show = new SliderShow('#slider');
+slider_show.init();
