@@ -50,8 +50,21 @@ export default class SliderShow {
       `;
    }
 
+   clientEvent() {
+      this.slider.addEventListener('mousedown', this.startSlider);
+   }
+
+   startSlider(ev) {
+      console.log(ev.type);
+   }
+
+   eventBind() {
+      this.startSlider = this.startSlider.bind(this);
+   }
+
    init() {
       this.getImagesInAPI();
+      this.clientEvent();
       return this;
    }
 }
