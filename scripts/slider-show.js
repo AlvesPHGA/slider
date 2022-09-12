@@ -14,10 +14,22 @@ export default class SliderShow {
                return { name, img, level };
             });
 
-            for (const i of items) {
-               if (i.level === 'Champion')
-                  cards.innerHTML += this.template(i.name, i.img, i.level);
-            }
+            const name_digimon = [
+               { name: 'Greymon' },
+               { name: 'Garurumon' },
+               { name: 'Birdramon' },
+               { name: 'Kabuterimon' },
+               { name: 'Togemon' },
+               { name: 'Ikkakumon' },
+               { name: 'Angemon' },
+            ];
+
+            items.forEach((a, id) => {
+               name_digimon.forEach((b) => {
+                  if (a.name === b.name)
+                     cards.innerHTML += this.template(a.name, a.img, a.level);
+               });
+            });
          });
    }
 
