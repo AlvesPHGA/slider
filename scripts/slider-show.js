@@ -104,7 +104,6 @@ export default class SliderShow {
       const slider_content = this.slider.querySelector('.__slider-items');
 
       slider_content.style.transform = `translateX(${trans}px)`;
-      console.log(trans);
    }
 
    eventBind() {

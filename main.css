@@ -304,6 +304,7 @@ h2 {
   position: relative;
   height: 400px;
   display: flex;
+  overflow: hidden;
 }
 .__slider .__slider-container .__slider-items {
   display: flex;
