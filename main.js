@@ -25,5 +25,5 @@ const slider_infinite = new SliderInfinite(
 slider_infinite.init();
 
 // Slider
-const slider_show = new SliderShow('#slider');
+const slider_show = new SliderShow('#slider', '#slider .__slider-items');
 slider_show.init();

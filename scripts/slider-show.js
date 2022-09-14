@@ -1,7 +1,7 @@
 export default class SliderShow {
    constructor(slider, slider_content) {
       this.slider = document.querySelector(slider);
-      // this.slider_content = document.querySelector(slider_content);
+      this.slider_content = document.querySelector(slider_content);
 
       this.position = {
          final: 0,
@@ -11,6 +11,7 @@ export default class SliderShow {
       };
    }
 
+   // cards
    getImagesInAPI() {
       const cards = this.slider.querySelector('.__slider-items');
 
@@ -57,6 +58,7 @@ export default class SliderShow {
       `;
    }
 
+   // move slider
    clientEvent() {
       this.slider.addEventListener('mousedown', this.startSlider);
       this.slider.addEventListener('touchstart', this.startSlider);
@@ -106,6 +108,37 @@ export default class SliderShow {
       slider_content.style.transform = `translateX(${trans}px)`;
    }
 
+   // position item
+   wrappItem() {
+      this.elements_array = [...this.slider_content.children].map((i) => {
+         const item_position = i.offsetLeft;
+         return {
+            item_position,
+            i,
+         };
+      });
+   }
+
+   changedItem(index) {
+      const active_item = this.elements_array[index];
+
+      this.itemIndex(index);
+
+      this.moveSlider(active_item.item_position);
+
+      this.position.final = active_item.item_position;
+   }
+
+   itemIndex(index) {
+      const last_item = this.elements_array.length - 1;
+
+      this.index_item = {
+         prev: index ? index - 1 : undefined,
+         active: index,
+         next: index === last_item ? undefined : index + 1,
+      };
+   }
+
    eventBind() {
       this.startSlider = this.startSlider.bind(this);
       this.onMoveSlider = this.onMoveSlider.bind(this);
@@ -114,8 +147,13 @@ export default class SliderShow {
 
    init() {
       this.eventBind();
-      this.getImagesInAPI();
+      // this.getImagesInAPI();
+
       this.clientEvent();
+
+      this.wrappItem();
+      this.changedItem(0);
+
       return this;
    }
 }
