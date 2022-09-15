@@ -110,20 +110,26 @@ export default class SliderShow {
 
    // position item
    wrappItem() {
-      this.elements_array = [...this.slider_content.children].map((i) => {
-         const item_position = i.offsetLeft;
+      this.elements_array = [...this.slider_content.children].map((item) => {
+         const item_position = this.itemPosition(item);
          return {
             item_position,
-            i,
+            item,
          };
       });
+   }
+
+   itemPosition(item) {
+      const field_margin =
+         (this.slider_content.offsetWidth - item.offsetWidth) / 2;
+
+      return -(item.offsetLeft - field_margin);
    }
 
    changedItem(index) {
       const active_item = this.elements_array[index];
 
       this.itemIndex(index);
-
       this.moveSlider(active_item.item_position);
 
       this.position.final = active_item.item_position;
@@ -137,6 +143,15 @@ export default class SliderShow {
          active: index,
          next: index === last_item ? undefined : index + 1,
       };
+
+      this.activeItem();
+   }
+
+   // utils
+   activeItem() {
+      this.elements_array[this.index_item.active].item.classList.add(
+         '__active',
+      );
    }
 
    eventBind() {
@@ -152,7 +167,7 @@ export default class SliderShow {
       this.clientEvent();
 
       this.wrappItem();
-      this.changedItem(0);
+      this.changedItem(3);
 
       return this;
    }
