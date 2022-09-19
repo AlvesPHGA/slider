@@ -201,3 +201,9 @@ export default class SliderShow {
       return this;
    }
 }
+
+export class SliderNav extends SliderShow {
+   constructor(slider, slider_content) {
+      super(slider, slider_content);
+   }
+}
