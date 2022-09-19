@@ -323,6 +323,8 @@ h2 {
   grid-template-rows: 80% 20%;
   position: relative;
   border-radius: 5px;
+  transform: scale(0.9);
+  transition: tranform 0.8s ease;
 }
 .__slider .__slider-container .__slider-items .__card .__image {
   width: 100%;
@@ -359,4 +361,7 @@ h2 {
   position: absolute;
   right: 0.2rem;
   top: 0.2rem;
+}
+.__slider .__slider-container .__slider-items .__card.__active-item {
+  transform: scale(1);
 }/*# sourceMappingURL=main.css.map */

@@ -13,7 +13,9 @@ export default class SliderShow {
 
    // cards
    getImagesInAPI() {
-      const cards = this.slider.querySelector('.__slider-items');
+      const cards = this.slider.querySelectorAll('.__slider-items .__card');
+
+      console.log(cards);
 
       fetch('https://digimon-api.vercel.app/api/digimon')
          .then((res) => res.json())
@@ -33,17 +35,16 @@ export default class SliderShow {
             ];
 
             items.forEach((a, id) => {
-               name_digimon.forEach((b) => {
-                  if (a.name === b.name)
-                     cards.innerHTML += this.template(a.name, a.img, a.level);
-               });
+               // name_digimon.forEach((b) => {
+               //    if (a.name === b.name)
+               cards.innerHTML = this.template(a.name, a.img, a.level);
+               // });
             });
          });
    }
 
    template(name, img, level) {
-      return `
-      <div class = '__card'>
+      return `      
          <div class = '__image'>
             <img src ='${img}' alt = 'Image ${name}' title = '${name}'>
          </div>
@@ -54,7 +55,6 @@ export default class SliderShow {
             <span>Level: </span>
             <span>${level}</span>
          </div>
-      </div>
       `;
    }
 
@@ -93,6 +93,8 @@ export default class SliderShow {
       this.slider.removeEventListener(type_action, this.onMoveSlider);
 
       this.position.final = this.position.new_pos;
+
+      this.changedItemOffSliderMove();
    }
 
    updatedPosition(clientX) {
@@ -106,6 +108,19 @@ export default class SliderShow {
       const slider_content = this.slider.querySelector('.__slider-items');
 
       slider_content.style.transform = `translateX(${trans}px)`;
+   }
+
+   changedItemOffSliderMove() {
+      if (this.position.movement > 120 && this.index_item.next !== undefined) {
+         this.activeNextItem();
+      } else if (
+         this.position.movement < 120 &&
+         this.index_item.prev !== undefined
+      ) {
+         this.activePrevItem();
+      } else {
+         this.changedItem(this.index_item.active);
+      }
    }
 
    // position item
@@ -133,6 +148,8 @@ export default class SliderShow {
       this.moveSlider(active_item.item_position);
 
       this.position.final = active_item.item_position;
+
+      this.activeItem();
    }
 
    itemIndex(index) {
@@ -143,14 +160,26 @@ export default class SliderShow {
          active: index,
          next: index === last_item ? undefined : index + 1,
       };
+   }
 
-      this.activeItem();
+   // active item
+   activePrevItem() {
+      if (this.index_item.prev !== undefined)
+         this.changedItem(this.index_item.prev);
+   }
+
+   activeNextItem() {
+      if (this.index_item.next !== undefined)
+         this.changedItem(this.index_item.next);
    }
 
    // utils
    activeItem() {
+      this.elements_array.forEach((i) => {
+         i.item.classList.remove('__active-item');
+      });
       this.elements_array[this.index_item.active].item.classList.add(
-         '__active',
+         '__active-item',
       );
    }
 
@@ -162,7 +191,7 @@ export default class SliderShow {
 
    init() {
       this.eventBind();
-      // this.getImagesInAPI();
+      this.getImagesInAPI();
 
       this.clientEvent();
 
