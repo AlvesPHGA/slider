@@ -302,15 +302,17 @@ h2 {
   width: 90vw;
   margin: 1.5rem auto;
   position: relative;
-  height: 400px;
+  height: 500px;
   display: flex;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .__slider .__slider-container .__slider-items {
   display: flex;
   flex-flow: row nowrap;
   gap: 20px;
-  height: 100%;
+  height: 400px;
   width: 100%;
 }
 .__slider .__slider-container .__slider-items .__card {
@@ -364,4 +366,29 @@ h2 {
 }
 .__slider .__slider-container .__slider-items .__card.__active-item {
   transform: scale(1);
+}
+.__slider .__slider-container .__arrows-to-slider {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.__slider .__slider-container .__arrows-to-slider .__btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: transparent;
+  border-color: #135fc2;
+  cursor: pointer;
+  transition: background 0.8s ease;
+}
+.__slider .__slider-container .__arrows-to-slider .__btn:hover {
+  background: #e8f1fe;
+}
+.__slider .__slider-container .__arrows-to-slider .__prev {
+  transform: rotate(180deg);
 }/*# sourceMappingURL=main.css.map */
