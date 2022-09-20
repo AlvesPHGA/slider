@@ -1,7 +1,7 @@
 import ImagesFetch from './scripts/imagesFetch.js';
 import SliderScroll from './scripts/slider-scroll.js';
 import SliderInfinite from './scripts/slider-infinite.js';
-import SliderShow from './scripts/slider-show.js';
+import SliderNavigator from './scripts/slider-show.js';
 
 // // Slider Scroll
 const imagesFetchToSliderScroll = new ImagesFetch(
@@ -25,11 +25,16 @@ const slider_infinite = new SliderInfinite(
 slider_infinite.init();
 
 // Slider
-const slider_show = new SliderShow(
+const slider_show = new SliderNavigator(
    '[data-slider=show]',
    '.__content',
    '.__slider-wrapp',
 );
 slider_show.init();
 
-// slider_show.addArrow('.__prev03', '.__next03');
+slider_show.addArrow(
+   '.__arrows-or-buttons .__previous',
+   '.__arrows-or-buttons .__next',
+);
+
+slider_show.createCounters();

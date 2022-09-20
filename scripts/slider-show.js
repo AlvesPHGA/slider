@@ -1,4 +1,4 @@
-export default class SliderShow {
+export class SliderShow {
    constructor(_slider, _content, _items) {
       this.slider = document.querySelector(_slider);
       this.content = document.querySelector(_content);
@@ -79,7 +79,7 @@ export default class SliderShow {
       }
 
       this.content.addEventListener(type_ev, this.onMoveSlider);
-      this.transitionItems(false);
+      // this.transitionItems(false);
    }
 
    onMoveSlider(ev) {
@@ -97,7 +97,7 @@ export default class SliderShow {
       this.position.final = this.position.new_pos;
 
       this.changedItemOffSliderMove();
-      this.transitionItems(true);
+      // this.transitionItems(true);
    }
 
    updatedPosition(clientX) {
@@ -185,7 +185,7 @@ export default class SliderShow {
    }
 
    transitionItems(active) {
-      this.items.style.transition = active ? 'transform .3s' : '';
+      this.items.style.transition = active ? 'transform .5s' : '';
    }
 
    eventBind() {
@@ -201,7 +201,7 @@ export default class SliderShow {
       this.eventBind();
       // this.getImagesInAPI();
 
-      this.transitionItems(true);
+      // this.transitionItems(true);
       this.clientEvent();
 
       this.wrappItem();
@@ -211,20 +211,38 @@ export default class SliderShow {
    }
 }
 
-// export default class SliderNavigator extends SliderShow {
-//    constructor(slider, slider_content) {
-//       super(slider, slider_content);
-//    }
+export default class SliderNavigator extends SliderShow {
+   constructor(_slider, _content, _items) {
+      super(_slider, _content, _items);
+   }
 
-//    // addArrow(_prev, _next) {
-//    //    this._prev = document.querySelector(_prev);
-//    //    this._next = document.querySelector(_next);
+   addArrow(_prev, _next) {
+      this._prev = document.querySelector(_prev);
+      this._next = document.querySelector(_next);
 
-//    //    // this.arrowEventClick();
-//    // }
+      this.arrowEventClick();
+   }
 
-//    // arrowEventClick() {
-//    //    this.btn_prev03.addEventListener('click', this.activePrevItem);
-//    //    this.btn_next03.addEventListener('click', this.activeNextItem);
-//    // }
-// }
+   arrowEventClick() {
+      this._prev.addEventListener('click', this.activePrevItem);
+      this._next.addEventListener('click', this.activeNextItem);
+   }
+
+   createCounters() {
+      const counters = document.querySelector('.__counters');
+
+      this.elements_array.forEach((item, index) => {
+         counters.innerHTML += `<span class = "__counter"><a href = '#item${
+            index + 1
+         }'></a></span>`;
+      });
+
+      return counters;
+   }
+
+   // addCounters() {
+   //    this.counter = this.createCounters();
+
+   //    this.counters_array = [...this.counter.children];
+   // }
+}

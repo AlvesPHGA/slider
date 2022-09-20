@@ -367,6 +367,26 @@ h2 {
 .__slider .__slider-container .__slider-items .__card.__active-item {
   transform: scale(1);
 }
+.__slider .__slider-container .__counters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.__slider .__slider-container .__counters .__counter {
+  width: 20px;
+  height: 20px;
+  background-color: #135fc2;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.7s ease;
+}
+.__slider .__slider-container .__counters .__counter:hover {
+  transform: scale(1.1);
+}
 .__slider .__slider-container .__arrows-or-buttons {
   margin-top: 30px;
   display: flex;
