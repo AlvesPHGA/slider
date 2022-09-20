@@ -1,7 +1,8 @@
 export default class SliderShow {
-   constructor(slider, slider_content) {
-      this.slider = document.querySelector(slider);
-      this.slider_content = document.querySelector(slider_content);
+   constructor(_slider, _content, _items) {
+      this.slider = document.querySelector(_slider);
+      this.content = document.querySelector(_content);
+      this.items = document.querySelector(_items);
 
       this.position = {
          final: 0,
@@ -60,10 +61,10 @@ export default class SliderShow {
 
    // move slider
    clientEvent() {
-      this.slider.addEventListener('mousedown', this.startSlider);
-      this.slider.addEventListener('touchstart', this.startSlider);
+      this.content.addEventListener('mousedown', this.startSlider);
+      this.content.addEventListener('touchstart', this.startSlider);
 
-      this.slider.addEventListener('mouseup', this.endMoveSlider);
+      this.content.addEventListener('mouseup', this.endMoveSlider);
    }
 
    startSlider(ev) {
@@ -77,7 +78,8 @@ export default class SliderShow {
          type_ev = 'touchmove';
       }
 
-      this.slider.addEventListener(type_ev, this.onMoveSlider);
+      this.content.addEventListener(type_ev, this.onMoveSlider);
+      this.transitionItems(false);
    }
 
    onMoveSlider(ev) {
@@ -90,11 +92,12 @@ export default class SliderShow {
 
    endMoveSlider(ev) {
       const type_action = ev.type === 'mouseup' ? 'mousemove' : 'touchmove';
-      this.slider.removeEventListener(type_action, this.onMoveSlider);
+      this.content.removeEventListener(type_action, this.onMoveSlider);
 
       this.position.final = this.position.new_pos;
 
       this.changedItemOffSliderMove();
+      this.transitionItems(true);
    }
 
    updatedPosition(clientX) {
@@ -105,9 +108,8 @@ export default class SliderShow {
 
    moveSlider(trans) {
       this.position.new_pos = trans;
-      const slider_content = this.slider.querySelector('.__slider-items');
 
-      slider_content.style.transform = `translateX(${trans}px)`;
+      this.items.style.transform = `translateX(${trans}px)`;
    }
 
    changedItemOffSliderMove() {
@@ -125,7 +127,7 @@ export default class SliderShow {
 
    // position item
    wrappItem() {
-      this.elements_array = [...this.slider_content.children].map((item) => {
+      this.elements_array = [...this.items.children].map((item) => {
          const item_position = this.itemPosition(item);
          return {
             item_position,
@@ -135,8 +137,7 @@ export default class SliderShow {
    }
 
    itemPosition(item) {
-      const field_margin =
-         (this.slider_content.offsetWidth - item.offsetWidth) / 2;
+      const field_margin = (this.content.offsetWidth - item.offsetWidth) / 2;
 
       return -(item.offsetLeft - field_margin);
    }
@@ -144,8 +145,8 @@ export default class SliderShow {
    changedItem(index) {
       const active_item = this.elements_array[index];
 
-      this.itemIndex(index);
       this.moveSlider(active_item.item_position);
+      this.itemIndex(index);
 
       this.position.final = active_item.item_position;
 
@@ -183,16 +184,24 @@ export default class SliderShow {
       );
    }
 
+   transitionItems(active) {
+      this.items.style.transition = active ? 'transform .3s' : '';
+   }
+
    eventBind() {
       this.startSlider = this.startSlider.bind(this);
       this.onMoveSlider = this.onMoveSlider.bind(this);
       this.endMoveSlider = this.endMoveSlider.bind(this);
+
+      this.activePrevItem = this.activePrevItem.bind(this);
+      this.activeNextItem = this.activeNextItem.bind(this);
    }
 
    init() {
       this.eventBind();
-      this.getImagesInAPI();
+      // this.getImagesInAPI();
 
+      this.transitionItems(true);
       this.clientEvent();
 
       this.wrappItem();
@@ -202,8 +211,20 @@ export default class SliderShow {
    }
 }
 
-export class SliderNav extends SliderShow {
-   constructor(slider, slider_content) {
-      super(slider, slider_content);
-   }
-}
+// export default class SliderNavigator extends SliderShow {
+//    constructor(slider, slider_content) {
+//       super(slider, slider_content);
+//    }
+
+//    // addArrow(_prev, _next) {
+//    //    this._prev = document.querySelector(_prev);
+//    //    this._next = document.querySelector(_next);
+
+//    //    // this.arrowEventClick();
+//    // }
+
+//    // arrowEventClick() {
+//    //    this.btn_prev03.addEventListener('click', this.activePrevItem);
+//    //    this.btn_next03.addEventListener('click', this.activeNextItem);
+//    // }
+// }

@@ -79,7 +79,7 @@
          }
       }
 
-      .__arrows-to-slider {
+      .__arrows-or-buttons {
          margin-top: 30px;
          display: flex;
          gap: 10px;
@@ -89,9 +89,7 @@
          transform: translate(-50%);
 
          .__btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
+            padding: 10px 20px;
             border: 1px solid black;
             background-color: transparent;
             border-color: #135fc2;
@@ -101,10 +99,6 @@
             &:hover {
                background: #e8f1fe;
             }
-         }
-
-         .__prev {
-            transform: rotate(180deg);
          }
       }
    }

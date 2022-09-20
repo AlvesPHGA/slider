@@ -3,7 +3,7 @@ import SliderScroll from './scripts/slider-scroll.js';
 import SliderInfinite from './scripts/slider-infinite.js';
 import SliderShow from './scripts/slider-show.js';
 
-// Slider Scroll
+// // Slider Scroll
 const imagesFetchToSliderScroll = new ImagesFetch(
    '.__slider-items',
    'https://digimon-api.vercel.app/api/digimon',
@@ -17,7 +17,7 @@ const slider_scroll = new SliderScroll(
 );
 slider_scroll.init();
 
-// Slider Infinite
+// // Slider Infinite
 const slider_infinite = new SliderInfinite(
    '[data-slider=infinite]',
    '.__slider-contents .__items',
@@ -25,5 +25,11 @@ const slider_infinite = new SliderInfinite(
 slider_infinite.init();
 
 // Slider
-const slider_show = new SliderShow('#slider', '#slider .__slider-items');
+const slider_show = new SliderShow(
+   '[data-slider=show]',
+   '.__content',
+   '.__slider-wrapp',
+);
 slider_show.init();
+
+// slider_show.addArrow('.__prev03', '.__next03');
