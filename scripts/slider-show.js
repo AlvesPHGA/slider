@@ -10,6 +10,8 @@ export class SliderShow {
          movement: 0,
          new_pos: 0,
       };
+
+      this.changedEvent = new Event('changedEvent');
    }
 
    // cards
@@ -151,6 +153,8 @@ export class SliderShow {
       this.position.final = active_item.item_position;
 
       this.activeItem();
+
+      this.items.dispatchEvent(this.changedEvent);
    }
 
    itemIndex(index) {
@@ -214,6 +218,7 @@ export class SliderShow {
 export default class SliderNavigator extends SliderShow {
    constructor(_slider, _content, _items) {
       super(_slider, _content, _items);
+      this.bindCounters();
    }
 
    addArrow(_prev, _next) {
@@ -240,9 +245,36 @@ export default class SliderNavigator extends SliderShow {
       return counters;
    }
 
-   // addCounters() {
-   //    this.counter = this.createCounters();
+   addCounters() {
+      this.counter = this.createCounters();
 
-   //    this.counters_array = [...this.counter.children];
-   // }
+      this.counters_array = [...this.counter.children];
+
+      this.activeCouter();
+      this.counters_array.forEach(this.clickCounters);
+   }
+
+   activeCouter() {
+      this.counters_array.forEach((c) => {
+         c.classList.remove('__active-counter');
+      });
+
+      this.counters_array[this.index_item.active].classList.add(
+         '__active-counter',
+      );
+   }
+
+   clickCounters(item, index) {
+      item.addEventListener('click', (ev) => {
+         ev.preventDefault();
+         this.changedItem(index);
+      });
+
+      this.items.addEventListener('changedEvent', this.activeCouter);
+   }
+
+   bindCounters() {
+      this.clickCounters = this.clickCounters.bind(this);
+      this.activeCouter = this.activeCouter.bind(this);
+   }
 }

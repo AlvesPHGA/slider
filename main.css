@@ -384,8 +384,8 @@ h2 {
   cursor: pointer;
   transition: transform 0.7s ease;
 }
-.__slider .__slider-container .__counters .__counter:hover {
-  transform: scale(1.1);
+.__slider .__slider-container .__counters .__counter.__active-counter, .__slider .__slider-container .__counters .__counter:hover {
+  transform: scale(1.2);
 }
 .__slider .__slider-container .__arrows-or-buttons {
   margin-top: 30px;

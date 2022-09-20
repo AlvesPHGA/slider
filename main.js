@@ -37,4 +37,4 @@ slider_show.addArrow(
    '.__arrows-or-buttons .__next',
 );
 
-slider_show.createCounters();
+slider_show.addCounters();
