@@ -18,6 +18,7 @@ export default class SliderScroll {
 
       this.fetch = new FetchToSliderScroll(
          'https://digimon-api.vercel.app/api/digimon',
+         'In Training',
       );
    }
 
