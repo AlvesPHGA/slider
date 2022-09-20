@@ -1,16 +1,9 @@
-import ImagesFetch from './scripts/imagesFetch.js';
 import SliderScroll from './scripts/slider-scroll.js';
 import SliderInfinite from './scripts/slider-infinite.js';
 import SliderNavigator from './scripts/slider-show.js';
+// import ImageFetch_01 from './scripts/fetch_collection.js';
 
 // // Slider Scroll
-const imagesFetchToSliderScroll = new ImagesFetch(
-   '.__slider-items',
-   'https://digimon-api.vercel.app/api/digimon',
-   'In Training',
-);
-imagesFetchToSliderScroll.init();
-
 const slider_scroll = new SliderScroll(
    '[data-slider=scroll]',
    '.__slider-items',

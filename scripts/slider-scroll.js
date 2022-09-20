@@ -1,3 +1,5 @@
+import { ImageFetch_01 } from './fetch_collection.js';
+
 export default class SliderScroll {
    constructor(dt_slider, slider_content) {
       this.dt_slider = document.querySelector(dt_slider);
@@ -13,6 +15,10 @@ export default class SliderScroll {
          final: 0,
          start: 0,
       };
+
+      this.fetch = new ImageFetch_01(
+         'https://digimon-api.vercel.app/api/digimon',
+      );
    }
 
    eventClick() {
