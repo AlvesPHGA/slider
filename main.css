@@ -325,8 +325,9 @@ h2 {
   grid-template-rows: 80% 20%;
   position: relative;
   border-radius: 5px;
+  opacity: 0.6;
   transform: scale(0.9);
-  transition: tranform 0.8s ease;
+  transition: all 0.8s ease;
 }
 .__slider .__slider-container .__slider-items .__card .__image {
   width: 100%;
@@ -366,6 +367,7 @@ h2 {
 }
 .__slider .__slider-container .__slider-items .__card.__active-item {
   transform: scale(1);
+  opacity: 1;
 }
 .__slider .__slider-container .__counters {
   display: flex;

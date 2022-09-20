@@ -29,9 +29,10 @@
             grid-template-rows: 80% 20%;
             position: relative;
             border-radius: 5px;
+            opacity: 0.6;
 
             transform: scale(0.9);
-            transition: tranform 0.8s ease;
+            transition: all 0.8s ease;
 
             .__image {
                width: 100%;
@@ -75,6 +76,7 @@
 
             &.__active-item {
                transform: scale(1);
+               opacity: 1;
             }
          }
       }
