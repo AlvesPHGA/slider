@@ -1,4 +1,4 @@
-export function ImageFetch_01(url_api) {
+export function FetchToSliderScroll(url_api) {
    const url = url_api;
    const section = document.querySelector('.__slider-items');
 

@@ -1,4 +1,4 @@
-import { ImageFetch_01 } from './fetch_collection.js';
+import { FetchToSliderScroll } from './fetch_collection.js';
 
 export default class SliderScroll {
    constructor(dt_slider, slider_content) {
@@ -16,7 +16,7 @@ export default class SliderScroll {
          start: 0,
       };
 
-      this.fetch = new ImageFetch_01(
+      this.fetch = new FetchToSliderScroll(
          'https://digimon-api.vercel.app/api/digimon',
       );
    }
