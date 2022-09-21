@@ -2,6 +2,7 @@ export function FetchToSliderScroll(url_api, level_cli) {
    const url = url_api;
    // let level_cli = level_cli;
    const section = document.querySelector('.__slider-items');
+   const html_dom = document.querySelectorAll('.__item');
 
    function template(name, img, level) {
       return `
@@ -16,7 +17,7 @@ export function FetchToSliderScroll(url_api, level_cli) {
       `;
    }
 
-   function match({ name, img, level }) {
+   function matchTraining({ name, img, level }) {
       const list_training = [
          'Koromon',
          'Tsunomon',
@@ -32,12 +33,36 @@ export function FetchToSliderScroll(url_api, level_cli) {
       });
    }
 
+   function matchRookie({ name, img, level }) {
+      const list_rookie = [
+         'Agumon',
+         'Gabumon',
+         'Biyomon',
+         'Tentomon',
+         'Palmon',
+         'Gomamon',
+         'Patamon',
+      ];
+
+      for (let i = 0; i < list_rookie.length; i++) {
+         if (name === list_rookie[i] && i < 3) {
+            html_dom[0].innerHTML += template(name, img, level);
+         } else if (name === list_rookie[i] && i >= 3 && i < 6) {
+            html_dom[1].innerHTML += template(name, img, level);
+         } else if (name === list_rookie[i] && i > 5) {
+            html_dom[2].innerHTML = template(name, img, level);
+         }
+      }
+   }
+
    fetch(url)
       .then((res) => res.json())
       .then((data) => {
          data.map((data) => {
             if (level_cli === 'In Training') {
-               match(data);
+               matchTraining(data);
+            } else if (level_cli === 'Rookie') {
+               matchRookie(data);
             }
          });
       });
