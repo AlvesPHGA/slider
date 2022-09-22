@@ -35,58 +35,6 @@
                gap: 20px;
                flex-shrink: 0;
                margin: 0 auto;
-
-               .__card {
-                  width: 385px;
-                  height: 100%;
-                  position: relative;
-                  background: #e8f1fe;
-                  border: 1px solid #135fc2;
-                  border-radius: 5px;
-
-                  background: rgba($color: red, $alpha: 0.3);
-
-                  .__image {
-                     width: 100%;
-                     height: 80%;
-                     flex-shrink: 0;
-
-                     img {
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 5px 5px 0 0;
-                     }
-                  }
-
-                  .__description {
-                     background: #e8f1fe;
-                     height: 20%;
-                     display: flex;
-                     border-radius: 0 0 5px 5px;
-
-                     .__legend {
-                        font-family: Arial, Helvetica, sans-serif;
-                        font-size: 1.5rem;
-                        font-weight: bolder;
-                        margin: auto;
-                     }
-                  }
-
-                  .__level {
-                     width: fit-content;
-                     font-size: 1.1rem;
-                     font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
-                        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                     background: #135fc2;
-                     color: #fff;
-                     border: 1px solid #135fc2;
-                     border-radius: 5px;
-                     padding: 5px 10px;
-                     position: absolute;
-                     right: 0.2rem;
-                     top: 0.2rem;
-                  }
-               }
             }
          }
       }
