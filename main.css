@@ -16,6 +16,11 @@ h2 {
   font-size: 2rem;
 }
 
+button:focus-visible {
+  border: 2px solid;
+  border-color: red;
+}
+
 .__card {
   width: 20rem;
   border: 1px solid #135fc2;
@@ -313,9 +318,14 @@ h2 {
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.7s ease;
+  border: none;
 }
 .__slider .__slider-container .__counters .__counter.__active-counter, .__slider .__slider-container .__counters .__counter:hover {
   transform: scale(1.2);
+}
+.__slider .__slider-container .__counters .__counter:focus {
+  outline: none;
+  border: 1px solid red;
 }
 .__slider .__slider-container .__arrows-or-buttons {
   margin-top: 30px;

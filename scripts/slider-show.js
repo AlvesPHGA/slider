@@ -192,9 +192,9 @@ export default class SliderNavigator extends SliderShow {
       const counters = document.querySelector('.__counters');
 
       this.elements_array.forEach((item, index) => {
-         counters.innerHTML += `<span class = "__counter"><a href = '#item${
+         counters.innerHTML += `<button class = "__counter"><a href = '#item${
             index + 1
-         }'></a></span>`;
+         }'></a></button>`;
       });
 
       return counters;

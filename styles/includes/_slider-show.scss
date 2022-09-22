@@ -47,10 +47,16 @@
             border-radius: 50%;
             cursor: pointer;
             transition: transform 0.7s ease;
+            border: none;
 
             &.__active-counter,
             &:hover {
                transform: scale(1.2);
+            }
+
+            &:focus {
+               outline: none;
+               border: 1px solid red;
             }
          }
       }
