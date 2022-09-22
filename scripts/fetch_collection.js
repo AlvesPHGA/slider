@@ -10,22 +10,11 @@ export function FetchToSliderScroll(url_api, level_cli) {
          <div class = '__description'>
             <span class = '__legend'>${name}</span>
          </div>
-      </div>
-      `;
-   }
-
-   function template02(name, img, level) {
-      return `      
-         <div class = '__image'>
-            <img src ='${img}' alt = 'Image ${name}' title = '${name}'>
-         </div>
-         <div class = '__description'>
-            <span class = '__legend'>${name}</span>
-         </div>
          <div class = '__level'>
             <span>Level: </span>
             <span>${level}</span>
          </div>
+      </div>
       `;
    }
 
