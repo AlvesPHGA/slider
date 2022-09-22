@@ -84,7 +84,7 @@ export default class SliderInfinite {
    init() {
       this.eventBind();
       this.clickArrows();
-      this.automaticSlider();
+      // this.automaticSlider();
       return this;
    }
 }
