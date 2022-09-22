@@ -1,3 +1,5 @@
+// import { FetchToSliderScroll } from './fetch_collection.js';
+
 export class SliderShow {
    constructor(_slider, _content, _items) {
       this.slider = document.querySelector(_slider);
@@ -12,53 +14,6 @@ export class SliderShow {
       };
 
       this.changedEvent = new Event('changedEvent');
-   }
-
-   // cards
-   getImagesInAPI() {
-      const cards = this.slider.querySelectorAll('.__slider-items .__card');
-
-      console.log(cards);
-
-      fetch('https://digimon-api.vercel.app/api/digimon')
-         .then((res) => res.json())
-         .then((item) => {
-            const items = item.map(({ name, img, level }) => {
-               return { name, img, level };
-            });
-
-            const name_digimon = [
-               { name: 'Greymon' },
-               { name: 'Garurumon' },
-               { name: 'Birdramon' },
-               { name: 'Kabuterimon' },
-               { name: 'Togemon' },
-               { name: 'Ikkakumon' },
-               { name: 'Angemon' },
-            ];
-
-            items.forEach((a, id) => {
-               // name_digimon.forEach((b) => {
-               //    if (a.name === b.name)
-               cards.innerHTML = this.template(a.name, a.img, a.level);
-               // });
-            });
-         });
-   }
-
-   template(name, img, level) {
-      return `      
-         <div class = '__image'>
-            <img src ='${img}' alt = 'Image ${name}' title = '${name}'>
-         </div>
-         <div class = '__description'>
-            <span class = '__legend'>${name}</span>
-         </div>
-         <div class = '__level'>
-            <span>Level: </span>
-            <span>${level}</span>
-         </div>
-      `;
    }
 
    // move slider

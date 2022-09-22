@@ -32,12 +32,12 @@ slider_show.addArrow(
 
 slider_show.addCounters();
 
-// function Fetch() {
-//    fetch('https://digimon-api.vercel.app/api/digimon')
-//       .then((res) => res.json())
-//       .then((data) => {
-//          console.log(data);
-//       });
-// }
+function Fetch() {
+   fetch('https://digimon-api.vercel.app/api/digimon')
+      .then((res) => res.json())
+      .then((data) => {
+         console.log(data);
+      });
+}
 
-// Fetch();
+Fetch();
