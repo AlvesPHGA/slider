@@ -201,12 +201,6 @@ button:focus-visible {
 .__slider-infinite {
   margin-bottom: 20px;
 }
-.__slider-infinite h2 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 2rem;
-}
 .__slider-infinite .__slider-container {
   width: 90vw;
   margin: 1.5rem auto 0;
@@ -359,4 +353,77 @@ button:focus-visible {
 }
 .__slider .__slider-container .__arrows-or-buttons .__btn:hover {
   background: #e8f1fe;
+}
+
+.__modal {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.__modal .__modal-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+}
+.__modal .__modal-container .__close-modal {
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #000;
+  flex-shrink: 0;
+  padding: 0.3rem;
+  transition: all 0.8s ease;
+  cursor: pointer;
+}
+.__modal .__modal-container .__close-modal svg {
+  border-radius: 50%;
+  fill: #fff;
+}
+.__modal .__modal-container .__close-modal:hover {
+  background-color: #fff;
+}
+.__modal .__modal-container .__close-modal:hover svg {
+  fill: #000;
+}
+.__modal .__modal-content {
+  border: 1px solid red;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.8rem 0;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7), -1px -1px 10px rgba(0, 0, 0, 0.7);
+}
+.__modal .__modal-content .__main-modal {
+  position: relative;
+  padding: 0 5rem;
+}
+.__modal .__modal-content .__main-modal .__image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.__modal .__modal-content .__main-modal .__level-modal {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0 0 0.5rem;
+}
+.__modal .__modal-content .__main-modal .__level-modal span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+.__modal .__modal-content .__main-modal .__level-modal span:nth-child(1) {
+  font-weight: 700;
 }/*# sourceMappingURL=main.css.map */
