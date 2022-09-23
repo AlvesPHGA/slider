@@ -31,8 +31,8 @@
 
 ### Schema html
 
-<pre >
-   <code>
+<pre>
+   <code style='color: white'>
       <section aria-label="galeria digimon In Training" class="__slider-container" data-slider='scroll'>
          <section class="__slider-items">
          </section>
