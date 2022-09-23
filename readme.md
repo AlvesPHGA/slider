@@ -9,7 +9,7 @@
 ## Project contents
 
 <ol>
-   <li>Slider Scroll :heavy_check_mark:</li>
+   <li><a href="https://github.com/AlvesPHGA/slider/blob/main/scripts/slider-infinite.js">Slider Scroll</a> :heavy_check_mark:</li>
    <li>Slider Infinite :heavy_check_mark:</li>
    <li>Slider :heavy_check_mark:</li>
 </ol>
