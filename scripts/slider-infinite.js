@@ -34,6 +34,8 @@ export default class SliderInfinite {
 
       this.styleLeft(el);
       this.timeout(el);
+
+      this.positionItems();
    }
 
    styleLeft(el) {
@@ -84,7 +86,7 @@ export default class SliderInfinite {
    init() {
       this.eventBind();
       this.clickArrows();
-      // this.automaticSlider();
+      this.automaticSlider();
       return this;
    }
 }
