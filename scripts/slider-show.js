@@ -36,7 +36,7 @@ export class SliderShow {
       }
 
       this.content.addEventListener(type_ev, this.onMoveSlider);
-      // this.transitionItems(false);
+      this.transitionItems(false);
    }
 
    onMoveSlider(ev) {
@@ -54,7 +54,7 @@ export class SliderShow {
       this.position.final = this.position.new_pos;
 
       this.changedItemOffSliderMove();
-      // this.transitionItems(true);
+      this.transitionItems(true);
    }
 
    updatedPosition(clientX) {
@@ -160,7 +160,7 @@ export class SliderShow {
       this.eventBind();
       // this.getImagesInAPI();
 
-      // this.transitionItems(true);
+      this.transitionItems(true);
       this.clientEvent();
 
       this.wrappItem();

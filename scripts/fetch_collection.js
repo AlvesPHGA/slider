@@ -1,9 +1,13 @@
 export function FetchToSliderScroll(url_api, level_cli) {
    const url = url_api;
 
-   function template01(name, img, level) {
-      return `
-      <div class = '__card'>
+   function template01(element, name, img, level) {
+      const field = element;
+      const div = document.createElement('div');
+
+      div.setAttribute('class', '__card');
+
+      div.innerHTML = `
          <div class = '__image'>
             <img src = '${img}' alt = 'Image ${name}' title = '${name}'>
          </div>
@@ -14,8 +18,9 @@ export function FetchToSliderScroll(url_api, level_cli) {
             <span>Level: </span>
             <span>${level}</span>
          </div>
-      </div>
       `;
+
+      field.appendChild(div);
    }
 
    function matchTraining({ name, img, level }) {
@@ -32,7 +37,7 @@ export function FetchToSliderScroll(url_api, level_cli) {
       ];
 
       list_training.forEach((i) => {
-         if (name === i) section.innerHTML += template01(name, img, level);
+         if (name === i) template01(section, name, img, level);
       });
    }
 
@@ -51,11 +56,11 @@ export function FetchToSliderScroll(url_api, level_cli) {
 
       for (let i = 0; i < list_rookie.length; i++) {
          if (name === list_rookie[i] && i < 3) {
-            html_dom[0].innerHTML += template01(name, img, level);
+            template01(html_dom[0], name, img, level);
          } else if (name === list_rookie[i] && i >= 3 && i < 6) {
-            html_dom[1].innerHTML += template01(name, img, level);
+            template01(html_dom[1], name, img, level);
          } else if (name === list_rookie[i] && i > 5) {
-            html_dom[2].innerHTML = template01(name, img, level);
+            template01(html_dom[2], name, img, level);
          }
       }
    }

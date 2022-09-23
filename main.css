@@ -361,9 +361,9 @@ button:focus-visible {
   position: fixed;
   top: 0;
   height: 100vh;
-  display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 .__modal .__modal-container {
   display: flex;
@@ -426,4 +426,7 @@ button:focus-visible {
 }
 .__modal .__modal-content .__main-modal .__level-modal span:nth-child(1) {
   font-weight: 700;
+}
+.__modal.__active-modal {
+  display: flex;
 }/*# sourceMappingURL=main.css.map */

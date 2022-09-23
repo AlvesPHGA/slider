@@ -29,5 +29,4 @@ slider_show.addArrow(
    '.__arrows-or-buttons .__previous',
    '.__arrows-or-buttons .__next',
 );
-
 slider_show.addCounters();
