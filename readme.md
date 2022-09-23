@@ -27,7 +27,7 @@
 
 <h2 id = 'sliderScroll'>Slider Scroll</h2>
 
-<a href="https://github.com/AlvesPHGA/slider/blob/main/scripts/slider-infinite.js" style = 'font-style: italic'>slider.js</a>
+<a href="https://github.com/AlvesPHGA/slider/blob/main/scripts/slider-scroll.js" >slider-scroll.js</a>
 
 ### Schema html
 
