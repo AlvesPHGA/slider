@@ -1,4 +1,4 @@
--> _Status of project_: :construction: Under Development :construction_worker:
+-> _Status of project_: Done
 
 # Slider collection
 
@@ -11,7 +11,7 @@
 <ol>
    <li>Slider Scroll :heavy_check_mark:</li>
    <li>Slider Infinite :heavy_check_mark:</li>
-   <li>Slider :construction_worker:</li>
+   <li>Slider :heavy_check_mark:</li>
 </ol>
 
 ## Technologies
