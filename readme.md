@@ -31,6 +31,8 @@
 
 ### Schema html
 
+<pre>
+<code>
 &lt;section aria-label="galeria digimon In Training" class="**slider-container" data-slider='scroll'&gt;
 &lt;section class="**slider-items"&gt;&lt;/section&gt;
 &lt;div class="**prev-next"&gt;
@@ -42,5 +44,7 @@ Next
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/section&gt;
+</pre>
+</code>
 
 \*Obs.: Its get content in an API
