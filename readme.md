@@ -31,16 +31,16 @@
 
 ### Schema html
 
-<section aria-label="galeria digimon In Training" class="__slider-container" data-slider='scroll'>
-   <section class="__slider-items"></section>
-      <div class="__prev-next">
-         <button type="button" class="__button __previous">
-            Back
-         </button>
-         <button type="button" class="__button __next">
-            Next
-         </button>
-      </div>
-</section>
+&lt;section aria-label="galeria digimon In Training" class="**slider-container" data-slider='scroll'&gt;
+&lt;section class="**slider-items"&gt;&lt;/section&gt;
+&lt;div class="**prev-next"&gt;
+&lt;button type="button" class="**button **previous"&gt;
+Back
+&lt;/button&gt;
+&lt;button type="button" class="**button \_\_next"&gt;
+Next
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/section&gt;
 
 \*Obs.: Its get content in an API
