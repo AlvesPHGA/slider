@@ -31,21 +31,20 @@
 
 ### Schema html
 
-<pre>
-   <code style='color: white'>
-      <code><section aria-label="galeria digimon In Training" class="__slider-container" data-slider='scroll'></code>
-         <code><section class="__slider-items"></code>
-         <code></section></code>
-         <code><div class="__prev-next"></code>
-            <button type="button" class="__button __previous">
-               Back
-            </button>
-            <button type="button" class="__button __next">
-               Next
-            </button>
-         </div>
-      </section>
-   </code>
-</pre>
+<!--
+
+<section aria-label="galeria digimon In Training" class="__slider-container" data-slider='scroll'>
+   <section class="__slider-items"></section>
+      <div class="__prev-next">
+         <button type="button" class="__button __previous">
+            Back
+         </button>
+         <button type="button" class="__button __next">
+            Next
+         </button>
+      </div>
+</section>
+
+-->
 
 \*Obs.: Its get content in an API
