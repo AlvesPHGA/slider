@@ -14,6 +14,10 @@
    <li><a href = '#sliderShow' >Slider</a>:heavy_check_mark:</li>
 </ol>
 
+### Other
+
+<a href='#fetchCollection'>Fetch Collection</a>
+
 ## Technologies
 
 <ul>
@@ -163,6 +167,12 @@ slider_show.addCounters();
       &lt;/div&gt;
 
    &lt;/section&gt;
-
 </pre>
 </code>
+
+## Other
+
+<h3 id = 'fetchCollection'>Fetch Collection</h3>
+<p> It document is some function that used in project, it's a function by API to get images to project.</p>
+
+<a href = 'https://github.com/AlvesPHGA/slider/blob/main/scripts/fetch_collection.js'>fetch_collection.js</a>
