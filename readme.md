@@ -28,7 +28,7 @@
 <hr>
 <hr>
 
-<h2 id = 'main'>Main</h2>
+<h2 id = 'main'>Main</h2> <span> - schema main</span>
 
 <pre>
 <code>
