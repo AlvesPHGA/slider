@@ -94,6 +94,8 @@ slider_show.addCounters();
 
 ### Schema html
 
+<pre>
+<code>
 &lt;section aria-label="galeria digimons Rookie" class="**slider-container" data-slider='infinite'&gt;
 &lt;section class="**slider-contents"&gt;
 &lt;section class="**items"&gt;
@@ -118,5 +120,7 @@ Next
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/section&gt;
+</pre>
+</code>
 
 \*Obs.: Its get content in an API
