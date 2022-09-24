@@ -10,7 +10,7 @@
 
 <ol>
    <li><a href='#sliderScroll'>Slider Scroll</a> :heavy_check_mark:</li>
-   <li>Slider Infinite :heavy_check_mark:</li>
+   <li><a href='#sliderInfinite'>Slider Infinite</p> :heavy_check_mark:</li>
    <li>Slider :heavy_check_mark:</li>
 </ol>
 
@@ -29,7 +29,8 @@
 <hr>
 
 <h2 id = 'main'>Main</h2>
-*schema main*
+
+_schema main.js_
 
 <pre>
 <code>
@@ -84,5 +85,38 @@ slider_show.addCounters();
 &lt;/section&gt;
 </pre>
 </code>
+
+\*Obs.: Its get content in an API
+
+<h2 id = 'sliderInfinite'>Slider Infinite</h2>
+
+<a href="https://github.com/AlvesPHGA/slider/blob/main/scripts/slider-infinite.js" >slider-infinite.js</a>
+
+### Schema html
+
+&lt;section aria-label="galeria digimons Rookie" class="**slider-container" data-slider='infinite'&gt;
+&lt;section class="**slider-contents"&gt;
+&lt;section class="**items"&gt;
+&lt;section class="**item **list-01"&gt;
+{get content in an API extern}
+&lt;/section&gt;
+&lt;section class="**item **list-02"&gt;
+{get content in an API extern}
+&lt;/section&gt;
+&lt;section class="**item \_\_list-03"&gt;
+{get content in an API extern}
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+
+&lt;div class="**prev-next"&gt;
+&lt;button type="button" class="**btn-prev **previous"&gt;
+Back
+&lt;/button&gt;
+&lt;button type="button" class="**btn-next \_\_next"&gt;
+Next
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/section&gt;
 
 \*Obs.: Its get content in an API
