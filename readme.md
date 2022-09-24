@@ -11,7 +11,7 @@
 <ol>
    <li><a href='#sliderScroll'>Slider Scroll</a>:heavy_check_mark:</li>
    <li><a href='#sliderInfinite'>Slider Infinite</a>:heavy_check_mark:</li>
-   <li>Slider:heavy_check_mark:</li>
+   <li><a href = '#sliderShow' >Slider</a>:heavy_check_mark:</li>
 </ol>
 
 ## Technologies
@@ -68,7 +68,9 @@ slider_show.addCounters();
 </code>
 </pre>
 
-<h2 id = 'sliderScroll'>Slider Scroll</h2>
+<h2>Example</h2>
+
+<h3 id = 'sliderScroll'>Slider Scroll</h3>
 
 <a href="https://github.com/AlvesPHGA/slider/blob/main/scripts/slider-scroll.js" >slider-scroll.js</a>
 
@@ -91,7 +93,7 @@ slider_show.addCounters();
 
 \*Obs.: Its get content in an API
 
-<h2 id = 'sliderInfinite'>Slider Infinite</h2>
+<h3 id = 'sliderInfinite'>Slider Infinite</h3>
 
 <a href="https://github.com/AlvesPHGA/slider/blob/main/scripts/slider-infinite.js" >slider-infinite.js</a>
 
@@ -128,3 +130,39 @@ slider_show.addCounters();
 </code>
 
 \*Obs.: Its get content in an API
+
+<h3 id = 'sliderShow'>Slider Show</h3>
+
+<a href="https://github.com/AlvesPHGA/slider/blob/main/scripts/slider-show.js" >slider-show.js</a>
+
+### Schema html
+
+<pre>
+<code>
+   &lt;section aria-label="galeria digimons champion" id="slider" class="__slider-container" data-slider="show"&gt;
+
+      &lt;section class="__content"&gt;
+
+         &lt;section class="__slider-items __slider-wrapp"&gt;
+
+            &lt;div class="__card champion"&gt; &lt;/div&gt;
+
+            &lt;div class="__card champion"&gt; &lt;/div&gt;
+
+            &lt;div class="__card champion"&gt; &lt;/div&gt;
+
+         &lt;/section&gt;
+
+      &lt;/section&gt;
+
+      &lt;div class="__counters"&gt; &lt;/div&gt;
+
+      &lt;div class="__arrows-or-buttons"&gt;
+         &lt;button type="button" class="__btn __previous"&gt;Back&lt;/button&gt;
+         &lt;button type="button" class="__btn __next"&gt;Next&lt;/button&gt;
+      &lt;/div&gt;
+
+   &lt;/section&gt;
+
+</pre>
+</code>
