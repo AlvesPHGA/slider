@@ -25,6 +25,19 @@
    <li>JavaScript</li>
 </ul>
 
+<hr>
+<hr>
+
+<h2 id = 'main'>Main</h2>
+
+<pre>
+<code>
+import SliderScroll from './scripts/slider-scroll.js';
+import SliderInfinite from './scripts/slider-infinite.js';
+import SliderNavigator from './scripts/slider-show.js';
+</code>
+</pre>
+
 <h2 id = 'sliderScroll'>Slider Scroll</h2>
 
 <a href="https://github.com/AlvesPHGA/slider/blob/main/scripts/slider-scroll.js" >slider-scroll.js</a>
