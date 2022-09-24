@@ -9,9 +9,9 @@
 ## Project contents
 
 <ol>
-   <li><a href='#sliderScroll'>Slider Scroll</a> :heavy_check_mark:</li>
-   <li><a href='#sliderInfinite'>Slider Infinite</p> :heavy_check_mark:</li>
-   <li>Slider :heavy_check_mark:</li>
+   <li><a href='#sliderScroll'>Slider Scroll</a></li>
+   <li><a href='#sliderInfinite'>Slider Infinite</p></li>
+   <li>Slider</li>
 </ol>
 
 ## Technologies
