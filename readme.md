@@ -97,28 +97,28 @@ slider_show.addCounters();
 <pre>
 <code>
 &lt;section aria-label="galeria digimons Rookie" class="__slider-container" data-slider='infinite'&gt;
-&lt;section class="__slider-contents"&gt;
-&lt;section class="__items"&gt;
-&lt;section class="__item __list-01"&gt;
-{get content in an API extern}
-&lt;/section&gt;
-&lt;section class="__item __list-02"&gt;
-{get content in an API extern}
-&lt;/section&gt;
-&lt;section class="__item __list-03"&gt;
-{get content in an API extern}
-&lt;/section&gt;
-&lt;/section&gt;
-&lt;/section&gt;
+   &lt;section class="__slider-contents"&gt;
+   
+      &lt;section class="__items"&gt;
+         &lt;section class="__item __list-01"&gt;
+            {get content in an API extern}
+         &lt;/section&gt;
+         
+         &lt;section class="__item __list-02"&gt;
+            {get content in an API extern}
+         &lt;/section&gt;
+         
+         &lt;section class="__item __list-03"&gt;
+            {get content in an API extern}
+         &lt;/section&gt;
+      &lt;/section&gt;
+      
+   &lt;/section&gt;
 
-&lt;div class="__prev-next"&gt;
-&lt;button type="button" class="__btn-prev __previous"&gt;
-Back
-&lt;/button&gt;
-&lt;button type="button" class="__btn-next __next"&gt;
-Next
-&lt;/button&gt;
-&lt;/div&gt;
+   &lt;div class="__prev-next"&gt;
+      &lt;button type="button" class="__btn-prev __previous"&gt; Back  &lt;/button&gt;
+      &lt;button type="button" class="__btn-next __next"&gt; Next &lt;/button&gt;
+   &lt;/div&gt;
 &lt;/section&gt;
 </pre>
 </code>
