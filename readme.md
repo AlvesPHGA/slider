@@ -2,6 +2,8 @@
 
 # Slider collection
 
+<a href = 'http://types-sliders.vercel.app/'>Project on</a>
+
 ## Description
 
 <p>This project is a small person project, it consists in an slider collection.</p>
