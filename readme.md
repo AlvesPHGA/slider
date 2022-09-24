@@ -2,7 +2,7 @@
 
 # Slider collection
 
-<a href = 'http://types-sliders.vercel.app/'>Project on</a>
+<a href = 'http://types-sliders.vercel.app/' target = '_blank' >Project on</a>
 
 ## Description
 
