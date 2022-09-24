@@ -77,11 +77,14 @@ slider_show.addCounters();
 <pre>
 <code>
 &lt;section aria-label="galeria digimon In Training" class="__slider-container" data-slider='scroll'&gt;
-&lt;section class="__slider-items"&gt; {get content in an API extern}  &lt;/section&gt;
-&lt;div class="__prev-next"&gt;
-&lt;button type="button" class="__button __previous"&gt; Back &lt;/button&gt;
-&lt;button type="button" class="__button __next"&gt; Next &lt;/button&gt;
-&lt;/div&gt;
+
+   &lt;section class="__slider-items"&gt; {get content in an API extern}  &lt;/section&gt;
+   
+   &lt;div class="__prev-next"&gt;
+      &lt;button type="button" class="__button __previous"&gt; Back &lt;/button&gt;
+      &lt;button type="button" class="__button __next"&gt; Next &lt;/button&gt;
+   &lt;/div&gt;
+   
 &lt;/section&gt;
 </pre>
 </code>
@@ -97,6 +100,7 @@ slider_show.addCounters();
 <pre>
 <code>
 &lt;section aria-label="galeria digimons Rookie" class="__slider-container" data-slider='infinite'&gt;
+
    &lt;section class="__slider-contents"&gt;
    
       &lt;section class="__items"&gt;
